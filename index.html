@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <form id="meu_form">
+        <header>
+            <img src="https://thumbs.dreamstime.com/b/l%C3%A2mpada-com-raios-estilo-de-desenho-animado-plano-desenhado-%C3%A0-m%C3%A3o-rabisco-s%C3%ADmbolo-da-criatividade-inova%C3%A7%C3%A3o-inspira%C3%A7%C3%A3o-186658968.jpg" id="imglogo" alt="imagem de uma lâmpada acesa">
+            <h1>Fale Conosco</h1>
+        </header>
+        <main>
+            <p>
+                <label for="nome">Nome*</label> <br>
+                <input type="text" id="nomeid" placeholder="digite seu nome" required="required" name="nome" autofocus>
+            </p>
+
+            <p>
+                <label for="fone">Telefone</label> <br>
+                <input type="tel" id="foneid" placeholder="(xx)xxxxx-xxxx" name="fone">
+            </p>
+
+            <p>
+                <label for="email">Email*</label> <br>
+                <input type="email" id="emailid" placeholder="exemplo@mail.com" required="required" name="email"> <!--o atributo "type" com o valor igual a "email" já vai validar se o email está correto, dispensando a criação de um método em js-->
+            </p>
+
+            <p>
+                <label for="opniao">Suas considerações*</label> <br>
+                <textarea name="opniao" id="opniaoid" cols="50" rows="7" placeholder="Deixe sua opnião (máx 512 caracteres)" maxlength="512"></textarea> <!--a tag <textarea> da uma flexibilidade maior para o usuário escrever uma mensagem, o mesmo pode redimensionar o seu tamanho.-->
+
+            </p>
+
+            <p style="font-size: 7.5pt; margin-top: -20px; text-align: end; color: gray;">Os campos marcados com * são de preenchimento obrigatório.</p>
+
+            <p>
+                <input type="submit" class="enviar" onclick="Enviar()" value="Enviar">
+            </p>
+        </main>
+    </form>
+
+    <footer>
+        Desenvolvido por <a href="https://github.com/loaalobo?tab=repositories" class="linkGithub" title="Clique aqui para acessar o meu repositório público no github" target="_blank" rel="external">Lorena Lobo</a>
+    </footer>
+
+    <script>
+        function Enviar() {
+            var txtnome = document.getElementById('nomeid').value
+            var txttelefone = document.getElementById('foneid').value
+            var txtemail = document.getElementById('emailid').value
+            var txtopniao = document.getElementById('opniaoid').value
+
+            if (txtnome == 0 || txtemail == 0 || txtopniao == 0) {
+                alert('Preencha os campos antes de enviar o formulário.')
+            } else {
+                alert(`Obrigado(a) pelo seu feedback, ${txtnome}!`)
+            }
+        }
+    </script>    
+</body>
+</html>
